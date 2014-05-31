@@ -11,11 +11,11 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'idea'
+apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
 war {
     baseName = 'ydapp-war'
-    version =  '0.1.0'
 }
 
 configurations {

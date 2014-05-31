@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AppController {
 
-    @RequestMapping({"/", "home", "index"})
+    @RequestMapping({"/", "index"})
     public String index() {
         return "index";
     }
+
+    @RequestMapping({"home"})
+    public String home() {
+        return "home";
+    }
+
 
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <script type="text/javascript" src="../../public/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" src="../../public/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="container">
+    <form class="well form-search row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" name="keyword" th:value="${keyword}" placeholder="用户名 / 姓名 / 电话 / 邮箱" class="form-control glyphicon-search"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">搜索</button>
+                </span>
+            </div>
+        </div>
+    </form>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>姓名</th>
+            <th>电话号码</th>
+            <th>电子邮箱地址</th>
+            <th>状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="model,s:${list }">
+            <td th:text="${s.index+1}">1</td>
+            <td th:text="${model.loginno}">zhangsan</td>
+            <td th:text="${model.name}">张三</td>
+            <td th:text="${model.telephone}">13838381438</td>
+            <td th:text="${model.email}">123456@qq.com</td>
+            <td th:text="${model.status}">正常</td>
+        </tr>
+        </tbody>
+    </table>
+    <ul class="pagination">
+        <li><a href="#" class="active">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
+</body>
+</html>

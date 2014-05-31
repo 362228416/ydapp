@@ -1,0 +1,18 @@
+#header {
+    height: 112px;
+    background: #003366;
+}
+
+#_content {margin-top: 112px;}
+
+#nav {
+    padding-top: 70px
+}
+
+#header .logo {
+    background: url("../images/logo.png");
+    width: 251px;
+    height: 60px;
+    float: left;
+    margin: 5px 0 0 25px;
+}

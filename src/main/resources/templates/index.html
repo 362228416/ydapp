@@ -2,9 +2,96 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title>welcome</title>
+    <title th:text="#{app.name}">首页</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../public/css/style.css" th:href="@{/css/style.css}"/>
+    <script type="text/javascript" src="../public/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" src="../public/js/all.js" th:src="@{/js/all.js}"></script>
 </head>
 <body>
-    Spring Boot it work!
+<div>
+    <!--header-->
+    <div id="header" class="navbar-fixed-top">
+        <!--logo-->
+        <div class="logo"></div>
+        <!--end logo-->
+        <!--tools-->
+        <div class="btn-group pull-right">
+            <a class="btn btn-xs btn-info " href="#1">管理员</a>
+            <a class="btn btn-xs btn-info" href="#2">首页</a>
+            <a class="btn btn-xs btn-info" href="#3">设置</a>
+            <a class="btn btn-xs btn-info" href="#4">刷新</a>
+            <a class="btn btn-xs btn-info" href="#5">注销</a>
+        </div>
+        <!--end tools-->
+        <!--nav-->
+        <div id="nav" class="span6">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#">首页</a></li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">建设审批<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">医疗机构建设</a></li>
+                        <li><a href="#">认证机构接入</a></li>
+                        <li><a href="#">医疗机构建设申请</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">认证机构接入申请</a></li>
+                        <li><a href="#">认证机构接入申请</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">建设跟踪<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">已申请医院</a></li>
+                        <li><a href="#">未申请医院</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">使用情况<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">已接入医院</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">基础数据<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">地区编码</a></li>
+                        <li><a href="#">业务类型编码</a></li>
+                        <li><a href="#">认证类型编码</a></li>
+                        <li><a href="#">业务系统编码</a></li>
+                        <li><a href="#">医疗卫生机构</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">运维日志<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">日志上传记录</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">激活申请<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">医疗机构建设申请</a></li>
+                        <li><a href="#">认证机构接入申请</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">证书使用明细<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">医疗机构建设申请</a></li>
+                    </ul>
+                </li>
+                <li><a data-toggle="dropdown" href="users/index.html" target="detail">用户管理<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="users/index.html" target="detail">VIP</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--end nav-->
+    </div>
+    <!--end header-->
+    <!--content-->
+    <div id="_content">
+        <iframe id="detail" name="detail" src="users/index.html" th:src="@{/users/}" frameborder="0" height="100%" width="100%" ></iframe>
+    </div>
+    <!--end content-->
+</div>
+<script>auto_layout();</script>
 </body>
 </html>

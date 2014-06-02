@@ -7,8 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 /**
  * @author: john
  * @version: 1.0 2014-05-29 13:38
@@ -16,6 +14,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends CrudRepository<User, String>, PagingAndSortingRepository<User, String> {
 
-    List<User> findByLoginnoLike(String name, Pageable pageable);
+    Page<User> findByLoginnoContainingOrNameContainingOrTelephoneContainingOrEmailContaining(String loginno, String name, String telephone, String email, Pageable pageable);
 
 }

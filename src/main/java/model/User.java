@@ -1,6 +1,10 @@
 package model;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -10,7 +14,8 @@ import javax.persistence.Id;
 @Entity(name="t_user")
 public class User {
     @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO, generator = "uuid")
+    @GenericGenerator(name="uuid", strategy="uuid", parameters = {@Parameter(name = "separator", value = "-")}) //这个是hibernate的注解
+    @GeneratedValue(generator = "uuid")
     private String id;
     private String name;
     private String loginno;
@@ -73,5 +78,18 @@ public class User {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", loginno='" + loginno + '\'' +
+                ", loginpwd='" + loginpwd + '\'' +
+                ", email='" + email + '\'' +
+                ", status=" + status +
+                ", telephone='" + telephone + '\'' +
+                '}';
     }
 }

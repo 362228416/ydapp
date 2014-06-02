@@ -16,3 +16,8 @@
     float: left;
     margin: 5px 0 0 25px;
 }
+
+/*覆盖bootstrap原有样式*/
+.well {padding: 10px;margin-bottom: 10px;}
+.table{margin-bottom: 10px}
+.pagination{margin: 0px}

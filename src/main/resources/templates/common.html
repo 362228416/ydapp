@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <!--公共分页-->
+    <div th:fragment="page">
+        <ul class="pagination" th:object="${pageData}">
+            <li th:if="*{!firstPage}"><a href="javascript:;" th:data="@{0}">首页</a></li>
+            <li th:if="*{hasPreviousPage()}"><a href="javascript:;" th:data="@{*{previousPageable().pageNumber}}">&laquo;</a></li>
+            <li th:if="*{number - 2 >= 0}"><a href="javascript:;" th:data="*{number-2}" th:text="*{number-1}">1</a></li>
+            <li th:if="*{number - 1 >= 0}"><a href="javascript:;" th:data="*{number-1}" th:text="*{number}">2</a></li>
+            <li class="active"><a href="javascript:;" th:data="*{number}" th:text="*{number+1}">3</a></li>
+            <li th:if="*{number + 1} &lt; *{totalPages - 1}"><a href="javascript:;" th:data="*{number+1}" th:text="*{number+2}">4</a></li>
+            <li th:if="*{number + 2} &lt; *{totalPages - 1}"><a href="javascript:;" th:data="*{number+2}" th:text="*{number+3}">5</a></li>
+            <li th:if="*{hasNextPage()}"><a href="javascript:;" th:data="@{*{nextPageable().pageNumber}}">&raquo;</a></li>
+            <li th:if="*{!lastPage}"><a href="javascript:;" th:data="@{*{totalPages} - 1}">尾页</a></li>
+            <li><span th:text="|*{totalElements}条记录|">共100条记录</span></li>
+            <li><span th:text="|共*{totalPages}页|">尾页</span></li>
+        </ul>
+    </div>
+</body>
+</html>
